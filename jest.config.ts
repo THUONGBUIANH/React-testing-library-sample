@@ -1,9 +1,6 @@
 import type { JestConfigWithTsJest } from "ts-jest";
 
 const jestConfig: JestConfigWithTsJest = {
-  // [...]
-  // Replace `ts-jest` with the preset you want to use
-  // from the above list
   preset: "ts-jest",
   testEnvironment: "jsdom",
   transform: {
@@ -13,6 +10,7 @@ const jestConfig: JestConfigWithTsJest = {
     "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/test/__mocks__/FileMock.js",
     "\\.(css|less|sass|scss)$": "identity-obj-proxy",
   },
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
 };
 
 export default jestConfig;
