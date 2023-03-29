@@ -32,7 +32,7 @@ function TodoList({ todos, setTodos }: Props) {
     <div className="todolist-container">
       <div className="todos-container">
         <div>
-          {todos.map((todo, index) => (
+          {todos.map((todo) => (
             <div
               key={todo.id}
               className={`todo-item ${todo.completed && "todo-item-active"}`}
