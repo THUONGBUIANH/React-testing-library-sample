@@ -1,10 +1,8 @@
 import { rest } from "msw";
 export const handlers = [
   rest.get("https://randomuser.me/api", (_req, res, ctx) => {
-    console.log('data1 1212')
     return res(
       ctx.json({
-        data: {
           results: [
             {
               name: {
@@ -19,7 +17,6 @@ export const handlers = [
               },
             },
           ],
-        },
       })
     );
   }),
